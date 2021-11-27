@@ -8,15 +8,15 @@ public class Radio {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int CurrentVolume) {
-        if (CurrentVolume > 10) {
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > 10) {
             return;
         }
-        if (CurrentVolume < 0) {
+        if (currentVolume < 0) {
             return;
         }
 
-        this.currentVolume = CurrentVolume;
+        this.currentVolume = currentVolume;
     }
 
     public int getCurrentStation() {
