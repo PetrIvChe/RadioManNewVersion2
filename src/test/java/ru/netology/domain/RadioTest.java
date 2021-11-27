@@ -56,7 +56,7 @@ public class RadioTest {
         currentV.setCurrentVolume(10);
         currentV.increaseVolume();
         int actual = currentV.getCurrentVolume();
-        int expected = 10;
+        int expected = 11;
         assertEquals(expected, actual);
     }
 

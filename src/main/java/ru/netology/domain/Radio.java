@@ -3,13 +3,22 @@ package ru.netology.domain;
 public class Radio {
     private int currentVolume;
     private int currentStation;
+    private int numberOfRadioStation = 10;
+
+    public Radio() {
+    }
+
+    public Radio(int numberOfRadioStation) {
+        this.numberOfRadioStation = numberOfRadioStation;
+    }
+
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         if (currentVolume < 0) {
@@ -25,7 +34,7 @@ public class Radio {
     }
 
     public int setCurrentStation(int CurrentStation) {
-        if (CurrentStation > 9) {
+        if (CurrentStation > numberOfRadioStation - 1) {
             return 0;
         }
         if (CurrentStation < 0) {
@@ -36,10 +45,10 @@ public class Radio {
 
     //Метод увеличения звука на 1
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         } else {
-            this.currentVolume = 10;
+            this.currentVolume = 100;
         }
     }
 
@@ -55,7 +64,7 @@ public class Radio {
     //Метод переключения станции next
 //Номер текущей радиостанции изменяется в пределах от 0 до 9
     public void nextStation() {
-        if (currentStation < 9) {
+        if (currentStation < numberOfRadioStation - 1) {
             this.currentStation = currentStation + 1;
         } else {
             this.currentStation = 0;
